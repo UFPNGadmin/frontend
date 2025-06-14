@@ -37,8 +37,13 @@ loadFilesBtn.onclick = async () => {
     if (cookieVal) {
       headers["Cookie"] = cookieVal;
     }
-    const resp = await fetch(`${backendBaseUrl}/list-files?url=${encodeURIComponent(url)}`, {
-      headers
+    const resp = await fetch(`${backendBaseUrl}/list-files`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        ...headers
+      },
+      body: JSON.stringify({ url }),
     });
 
     if (!resp.ok) {
@@ -60,6 +65,7 @@ loadFilesBtn.onclick = async () => {
     statusDiv.textContent = `Error: ${err.message}`;
   }
 };
+
 
 function renderFileList() {
   fileList.innerHTML = "";
