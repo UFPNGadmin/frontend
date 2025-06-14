@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Light ZIP Partial Downloader</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Light ZIP Partial Downloader</h1>
+
+    <label for="zip-url">ZIP URL:</label>
+    <input type="text" id="zip-url" placeholder="Enter ZIP file URL here" />
+
+    <label for="cookies">Cookies (optional):</label>
+    <input type="text" id="cookies" placeholder="Cookie header if needed" />
+
+    <button id="load-files-btn">Load ZIP Contents</button>
+
+    <div id="status"></div>
+
+    <div id="file-list-container" style="display:none;">
+      <h2>Files in ZIP</h2>
+      <ul id="file-list"></ul>
+
+      <div>
+        <strong>Total size to download:</strong>
+        <span id="total-size">0 B</span>
+      </div>
+
+      <button id="download-btn" disabled>Download Selected Files</button>
+    </div>
+
+    <!-- Adsterra banner placeholder -->
+    <div id="ad-banner" style="margin: 20px 0;">
+      <!-- Put banner/native ad script here -->
+    </div>
+
+    <!-- Rewarded ad placeholder -->
+    <div id="rewarded-ad-container" style="display:none;">
+      <p>Please watch the rewarded ad to unlock download.</p>
+      <!-- Put rewarded ad script here -->
+      <button id="simulate-ad-btn">Simulate Ad Watched (Test Only)</button>
+    </div>
+  </div>
+
+  <script src="download.js"></script>
+</body>
+</html>
